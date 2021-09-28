@@ -1,0 +1,33 @@
+- name: Delete project
+  hosts: localhost
+  # Since we do not need facts, this improves performance
+  gather_facts: False
+  # Run handlers even if play fails (used to cleanup tempfile)
+  force_handlers: True
+
+  tasks:
+  - name: "Create a workflow job template"
+    ansible.tower.tower_workflow_job_template:
+      name: "Test"
+      organization: Default
+      survey_enabled: true
+      survey:
+        name: ''
+        description: ''
+        spec:
+        - question_name: Environment
+          required: true
+          type: multiplechoice
+          variable: survey_project_env
+          default: preprod
+          choices: |-
+            test
+            preprod
+            prod
+        - question_name: Project name
+          required: true
+          type: text
+          variable: survey_project_name
+          min: 0
+          max: 64
+          default: ''
