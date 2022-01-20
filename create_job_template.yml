@@ -1,0 +1,11 @@
+- name: Create Tower Ping job template
+  tower_job_template:
+    name: "Ping"
+    job_type: "run"
+    organization: "Default"
+    inventory: "Local"
+    project: "Demo"
+    playbook: "ping.yml"
+    credentials:
+      - "Local"
+    state: "present"
