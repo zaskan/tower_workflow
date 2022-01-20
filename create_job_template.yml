@@ -1,3 +1,6 @@
+- name: Delete project
+  hosts: localhost
+
 - name: Create Tower Ping job template
   tower_job_template:
     name: "Ping"
