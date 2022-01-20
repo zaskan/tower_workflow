@@ -7,9 +7,7 @@
       name: "Ping"
       job_type: "run"
       organization: "Default"
-      inventory: "Local"
-      project: "Demo"
-      playbook: "ping.yml"
-      credentials:
-        - "Local"
+      inventory: "Test"
+      project: "Demo Project"
+      playbook: "hello_world.yml"
       state: "present"
