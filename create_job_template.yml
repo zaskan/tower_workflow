@@ -1,5 +1,6 @@
 - name: Delete project
   hosts: localhost
+  gather_facts: no
   tasks:
 
   - name: Create Tower Ping job template
@@ -11,3 +12,4 @@
       project: "Demo Project"
       playbook: "hello_world.yml"
       state: "present"
+      validate_certs: no
