@@ -3,7 +3,7 @@
   tasks:
 
   - name: Create Tower Ping job template
-    tower_job_template:
+    ansible.tower.tower_job_template:
       name: "Ping"
       job_type: "run"
       organization: "Default"
