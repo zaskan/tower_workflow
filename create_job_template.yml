@@ -3,6 +3,9 @@
   gather_facts: no
   tasks:
 
+  - name: Get variables
+    shell: export
+    
   - name: Create Tower Ping job template
     ansible.tower.tower_job_template:
       name: "Ping"
