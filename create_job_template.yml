@@ -8,7 +8,7 @@
     register: output
     
   - debug:
-    msg: "{{ output }}"
+      msg: "{{ output }}"
     
   - name: Create Tower Ping job template
     ansible.tower.tower_job_template:
