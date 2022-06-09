@@ -5,6 +5,10 @@
 
   - name: Get variables
     shell: export
+    register: output
+    
+  - debug:
+    msg: "{{ output }}"
     
   - name: Create Tower Ping job template
     ansible.tower.tower_job_template:
